@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071a3b">
+  <meta name="description" content="Rick's Cellphone Repair — fast, reliable and affordable smartphone repair. Screen, battery, charging port and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rick's Cellphone Repair | Fast. Reliable. Affordable.">
+  <meta property="og:description" content="Get your phone back in top shape. Expert cellphone repair with friendly service.">
+  <!-- Replace og-image.jpg with the final 1200x630 social preview image when ready. -->
+  <meta property="og:image" content="https://YOUR-DOMAIN.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rick's Cellphone Repair">
+  <meta name="twitter:description" content="Fast. Reliable. Affordable cellphone repair.">
+  <meta name="twitter:image" content="https://YOUR-DOMAIN.com/og-image.jpg">
+  <title>Rick's Cellphone Repair | Fast. Reliable. Affordable.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #071a3b;
+      --navy-2: #0b2858;
+      --blue: #087cf0;
+      --cyan: #36c5ff;
+      --yellow: #ffc928;
+      --ink: #101d35;
+      --muted: #62708a;
+      --paper: #f5f8fd;
+      --white: #fff;
+      --line: #dce6f4;
+      --shadow: 0 18px 50px rgba(4, 25, 61, .13);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(5, 20, 47, .96);
+      border-bottom: 1px solid rgba(80, 174, 255, .25);
+      backdrop-filter: blur(14px);
+    }
+    .nav {
+      min-height: 82px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: white; min-width: 220px; }
+    .brand-mark {
+      width: 48px; height: 48px; border: 2px solid var(--cyan);
+      border-radius: 13px; display: grid; place-items: center;
+      color: var(--yellow); font-size: 25px; transform: rotate(-8deg);
+      box-shadow: 0 0 22px rgba(54,197,255,.2);
+    }
+    .brand-name { font: 800 25px/1 "Manrope", sans-serif; letter-spacing: -1px; }
+    .brand-name span { display: block; color: var(--yellow); font-size: 13px; letter-spacing: 1.3px; margin-top: 5px; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 28px; color: #e9f2ff; font-size: 14px; font-weight: 700; }
+    .nav-links a { transition: color .2s; }
+    .nav-links a:hover { color: var(--yellow); }
+    .nav-cta, .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      border: 0; border-radius: 999px; padding: 13px 21px;
+      background: var(--yellow); color: #101a2c; font-weight: 800;
+      box-shadow: 0 8px 24px rgba(255,201,40,.2); cursor: pointer;
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .nav-cta:hover, .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(255,201,40,.28); }
+    .menu-toggle {
+      display: none; border: 1px solid rgba(255,255,255,.25); color: white;
+      background: transparent; border-radius: 12px; width: 44px; height: 44px; font-size: 22px;
+    }
+
+    .hero {
+      position: relative; overflow: hidden; color: white; isolation: isolate;
+      background: linear-gradient(105deg, #061735 0%, #092957 53%, #061735 100%);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(4,17,42,.97) 0%, rgba(4,24,57,.9) 42%, rgba(4,24,57,.18) 100%),
+        url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1800&q=88") center 45%/cover;
+      opacity: .98;
+    }
+    .hero::after {
+      content: ""; position: absolute; z-index: -1; width: 500px; height: 500px;
+      right: -180px; top: -220px; border: 1px solid rgba(54,197,255,.25);
+      border-radius: 50%; box-shadow: 0 0 0 45px rgba(54,197,255,.035), 0 0 0 95px rgba(54,197,255,.025);
+    }
+    .hero-inner {
+      min-height: 570px; display: grid; grid-template-columns: 1.05fr .95fr;
+      align-items: center; gap: 32px; padding-block: 76px;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; color: var(--yellow);
+      text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 800;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--yellow); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      font: 800 clamp(42px, 6vw, 72px)/1.04 "Manrope", sans-serif;
+      letter-spacing: -3px; margin: 18px 0;
+    }
+    h1 span { color: var(--yellow); display: block; }
+    .hero-copy { max-width: 560px; color: #e2edff; font-size: 18px; }
+    .hero-points { display: flex; flex-wrap: wrap; gap: 12px 20px; margin: 25px 0 30px; color: #f5f8ff; font-size: 14px; font-weight: 700; }
+    .hero-points span { display: inline-flex; align-items: center; gap: 8px; }
+    .check {
+      display: grid; place-items: center; width: 21px; height: 21px; flex: 0 0 21px;
+      border-radius: 50%; color: var(--navy); background: var(--yellow); font-size: 13px; font-weight: 900;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      padding: 12px 20px; border: 1px solid rgba(255,255,255,.6);
+      border-radius: 999px; color: white; font-weight: 700;
+      transition: background .2s, transform .2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.12); transform: translateY(-2px); }
+    .hero-note {
+      justify-self: end; align-self: end; margin-bottom: 8px; padding: 17px 20px;
+      border: 1px solid rgba(255,255,255,.2); border-radius: 17px;
+      background: rgba(5,22,50,.68); backdrop-filter: blur(12px);
+      box-shadow: var(--shadow); max-width: 250px;
+    }
+    .hero-note strong { display: block; color: var(--yellow); font: 800 22px "Manrope",sans-serif; }
+    .hero-note small { color: #e1ebfa; }
+
+    .section { padding: 82px 0; }
+    .section-head { text-align: center; max-width: 680px; margin: 0 auto 38px; }
+    .section-kicker { color: var(--blue); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 800; }
+    .section h2 { color: var(--navy); font: 800 clamp(30px,4vw,42px)/1.15 "Manrope",sans-serif; letter-spacing: -1.5px; margin: 9px 0 12px; }
+    .section-head p { color: var(--muted); margin-bottom: 0; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 17px; }
+    .service-card {
+      background: white; border: 1px solid var(--line); border-radius: 18px;
+      padding: 25px; box-shadow: 0 8px 25px rgba(7,26,59,.045);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .service-card:hover { transform: translateY(-5px); border-color: #a9d4ff; box-shadow: var(--shadow); }
+    .service-icon {
+      width: 54px; height: 54px; display: grid; place-items: center;
+      border-radius: 16px; background: #eaf4ff; color: var(--blue); font-size: 26px; margin-bottom: 17px;
+    }
+    .service-card h3 { font: 800 18px "Manrope",sans-serif; color: var(--navy); margin-bottom: 7px; }
+    .service-card p { color: var(--muted); font-size: 14px; margin: 0; }
+
+    .why { background: var(--navy); color: white; position: relative; overflow: hidden; }
+    .why::before { content:""; position:absolute; width:440px; height:440px; border:1px solid rgba(54,197,255,.17); border-radius:50%; right:-150px; top:-210px; box-shadow:0 0 0 55px rgba(54,197,255,.035),0 0 0 110px rgba(54,197,255,.025); }
+    .why .section-head h2 { color: white; }
+    .why .section-head p { color: #b9cbe4; }
+    .why .section-kicker { color: var(--yellow); }
+    .features { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; position: relative; }
+    .feature { text-align: center; padding: 18px 14px; border-right: 1px solid rgba(255,255,255,.15); }
+    .feature:last-child { border: 0; }
+    .feature-icon { color: var(--yellow); font-size: 30px; margin-bottom: 12px; }
+    .feature h3 { font: 800 17px "Manrope",sans-serif; margin-bottom: 7px; }
+    .feature p { color: #c4d2e6; font-size: 14px; margin: 0; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 55px; }
+    .about-photo {
+      min-height: 390px; border-radius: 26px; overflow: hidden; position: relative;
+      background: linear-gradient(0deg,rgba(4,20,47,.35),transparent),url("https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1100&q=85") center/cover;
+      box-shadow: var(--shadow);
+    }
+    .about-photo::after { content: "YOUR LOCAL PHONE REPAIR PARTNER"; position: absolute; left: 20px; bottom: 20px; padding: 10px 14px; border-radius: 9px; color: var(--navy); background: var(--yellow); font-size: 11px; font-weight: 900; letter-spacing: 1px; }
+    .about-copy h2 { color: var(--navy); font: 800 clamp(30px,4vw,40px)/1.15 "Manrope",sans-serif; letter-spacing: -1.5px; }
+    .about-copy p { color: var(--muted); }
+    .about-list { list-style: none; padding: 0; margin: 22px 0 28px; display: grid; gap: 11px; }
+    .about-list li { display: flex; gap: 10px; align-items: center; font-weight: 700; color: #243653; font-size: 14px; }
+
+    .cta-band { background: linear-gradient(110deg,#087cf0,#0754b8); color: white; padding: 34px 0; }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .cta-inner h2 { font: 800 clamp(24px,3vw,32px) "Manrope",sans-serif; margin: 0 0 5px; }
+    .cta-inner p { color: #e2efff; margin: 0; }
+    .cta-inner .btn { flex-shrink: 0; }
+
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 35px; align-items: start; }
+    .contact-card { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: 0 8px 25px rgba(7,26,59,.05); }
+    .contact-card h3 { color: var(--navy); font: 800 21px "Manrope",sans-serif; margin-bottom: 20px; }
+    .contact-item { display: flex; gap: 13px; margin: 18px 0; }
+    .contact-item .service-icon { width: 43px; height: 43px; flex: 0 0 43px; margin: 0; font-size: 20px; border-radius: 13px; }
+    .contact-item strong { display: block; color: var(--navy); font-size: 14px; }
+    .contact-item span { color: var(--muted); font-size: 14px; }
+    .contact-form { display: grid; gap: 13px; }
+    .contact-form label { display: grid; gap: 6px; color: #31415c; font-size: 13px; font-weight: 700; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; border: 1px solid #d8e2ef; border-radius: 11px;
+      background: #fbfdff; padding: 13px 14px; outline: none; color: var(--ink);
+    }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(8,124,240,.1); }
+    .contact-form textarea { min-height: 110px; resize: vertical; }
+    .form-note { color: var(--muted); font-size: 12px; margin: 0; }
+
+    footer { background: #04132c; color: #d6e2f3; padding: 35px 0 22px; }
+    .footer-main { display: flex; justify-content: space-between; gap: 35px; align-items: flex-start; padding-bottom: 26px; }
+    .footer-brand p { color: #9fb2ce; max-width: 290px; font-size: 13px; margin: 13px 0 0; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; font-weight: 700; }
+    .footer-links a:hover { color: var(--yellow); }
+    .copyright { border-top: 1px solid rgba(255,255,255,.12); padding-top: 18px; color: #8fa3c0; font-size: 12px; display: flex; justify-content: space-between; gap: 15px; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .to-top {
+      position: fixed; right: 20px; bottom: 20px; z-index: 30; width: 46px; height: 46px;
+      border: 0; border-radius: 50%; background: var(--yellow); color: var(--navy);
+      font-size: 20px; font-weight: 900; box-shadow: var(--shadow); cursor: pointer;
+      opacity: 0; pointer-events: none; transform: translateY(8px); transition: .2s;
+    }
+    .to-top.show { opacity: 1; pointer-events: auto; transform: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 17px; }
+      .hero-inner { grid-template-columns: 1fr .6fr; }
+      .hero-note { max-width: 210px; }
+      .features { grid-template-columns: repeat(2,1fr); }
+      .feature:nth-child(2) { border-right: 0; }
+      .feature:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.15); }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(100% - 30px, 560px); }
+      .nav { min-height: 72px; }
+      .brand { min-width: 0; }
+      .brand-mark { width: 42px; height: 42px; font-size: 21px; }
+      .brand-name { font-size: 21px; }
+      .brand-name span { font-size: 10px; }
+      .menu-toggle { display: grid; place-items: center; }
+      .nav-cta { display: none; }
+      .nav-links {
+        display: none; position: absolute; top: 71px; left: 0; right: 0;
+        padding: 18px 22px 22px; background: #061735; border-top: 1px solid rgba(255,255,255,.1);
+        flex-direction: column; align-items: stretch; gap: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 4px; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .hero::before {
+        background: linear-gradient(90deg,rgba(4,17,42,.96),rgba(4,24,57,.77)),
+        url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1100&q=85") center/cover;
+      }
+      .hero-inner { min-height: auto; display: block; padding-block: 76px 58px; }
+      h1 { letter-spacing: -2px; }
+      .hero-copy { font-size: 16px; }
+      .hero-note { margin: 35px 0 0; max-width: 230px; }
+      .section { padding: 64px 0; }
+      .services-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+      .service-card { padding: 18px; }
+      .service-card h3 { font-size: 16px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .about-photo { min-height: 280px; order: 2; }
+      .cta-inner { align-items: flex-start; flex-direction: column; }
+      .footer-main { flex-direction: column; }
+      .copyright { flex-direction: column; }
+    }
+    @media (max-width: 390px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions a { width: 100%; }
+      .features { grid-template-columns: 1fr; }
+      .feature { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.15); }
+      .feature:last-child { border-bottom: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- BUSINESS DETAILS: Replace sample contact information before publishing. -->
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Rick's Cellphone Repair home">
+        <span class="brand-mark" aria-hidden="true">🔧</span>
+        <span class="brand-name">Rick's <span>Cellphone Repair</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#why">Why Rick's</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">☎ <span>Contact Us</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div>
+          <div class="eyebrow">Your trusted phone repair partner</div>
+          <h1>Rick's <span>Cellphone Repair</span></h1>
+          <h2 style="font:800 clamp(20px,3vw,27px) 'Manrope',sans-serif;margin:0 0 12px;color:#fff">Fast. Reliable. Affordable.</h2>
+          <p class="hero-copy">Cracked screen? Battery trouble? Charging problems? Let's get your phone back in top shape with friendly service and quality workmanship.</p>
+          <div class="hero-points">
+            <span><i class="check">✓</i> Skilled technicians</span>
+            <span><i class="check">✓</i> Quality-focused repairs</span>
+            <span><i class="check">✓</i> Fair, clear pricing</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">🔧 Request a Repair <span>→</span></a>
+            <a class="btn-outline" href="#services">Explore Services <span>↗</span></a>
+          </div>
+        </div>
+        <div class="hero-note">
+          <strong>Let's fix it.</strong>
+          <small>Tell us what's wrong with your phone and we'll help you with the next step.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">What we can help with</div>
+          <h2>Our Repair Services</h2>
+          <p>From everyday wear and tear to unexpected phone problems, we're here to help.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal"><div class="service-icon">▧</div><h3>Screen Replacement</h3><p>Cracked, unresponsive or damaged display? Ask us about screen replacement options.</p></article>
+          <article class="service-card reveal"><div class="service-icon">ϟ</div><h3>Battery Replacement</h3><p>For phones that drain quickly, shut down unexpectedly or won't hold a charge.</p></article>
+          <article class="service-card reveal"><div class="service-icon">⌁</div><h3>Charging Port Repair</h3><p>Having trouble charging or connecting a cable? Let us inspect the port.</p></article>
+          <article class="service-card reveal"><div class="service-icon">◉</div><h3>Water Damage Check</h3><p>Liquid exposure can cause hidden issues. Get the device assessed as soon as possible.</p></article>
+          <article class="service-card reveal"><div class="service-icon">⚙</div><h3>Software Troubleshooting</h3><p>Help with common software issues, updates, settings and performance problems.</p></article>
+          <article class="service-card reveal"><div class="service-icon">＋</div><h3>Other Phone Issues</h3><p>Camera, speaker, microphone, buttons and other concerns — just ask.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why" id="why">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">The Rick's difference</div>
+          <h2>Why Choose Rick's?</h2>
+          <p>Good service starts with honest communication and care for every device.</p>
+        </div>
+        <div class="features">
+          <div class="feature reveal"><div class="feature-icon">ϟ</div><h3>Prompt Service</h3><p>We aim to get you a clear repair assessment without unnecessary delays.</p></div>
+          <div class="feature reveal"><div class="feature-icon">♢</div><h3>Careful Work</h3><p>Your device deserves careful handling and attention to detail.</p></div>
+          <div class="feature reveal"><div class="feature-icon">₱</div><h3>Clear Pricing</h3><p>Know the estimated cost before deciding to proceed with a repair.</p></div>
+          <div class="feature reveal"><div class="feature-icon">♡</div><h3>Friendly Support</h3><p>We explain the issue in simple terms and help you understand your options.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <div class="section-kicker">A little about us</div>
+          <h2>Keeping You Connected.</h2>
+          <p>At Rick's Cellphone Repair, our goal is simple: help you get more life out of the device you rely on every day.</p>
+          <p>Whether your phone has a damaged screen, a battery that won't last, or another issue, we'll listen, assess the problem and explain the available repair options.</p>
+          <ul class="about-list">
+            <li><i class="check">✓</i> Friendly, straightforward service</li>
+            <li><i class="check">✓</i> Repair options explained clearly</li>
+            <li><i class="check">✓</i> Your approval before work begins</li>
+          </ul>
+          <a class="btn" href="#contact">Talk to Rick's <span>→</span></a>
+        </div>
+        <div class="about-photo reveal" role="img" aria-label="Smartphones displayed on a work surface"></div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-inner">
+        <div><h2>Phone trouble? Let's talk.</h2><p>Send us a message and tell us what your phone is doing.</p></div>
+        <a class="btn" href="#contact">Get in Touch <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">We're ready to help</div>
+          <h2>Contact Rick's</h2>
+          <p>Reach out for repair inquiries, estimates and business hours.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <h3>Visit or Message Us</h3>
+            <div class="contact-item"><div class="service-icon">⌖</div><div><strong>Shop Address</strong><span>123 Main Street, Your Town, Philippines</span></div></div>
+            <div class="contact-item"><div class="service-icon">☎</div><div><strong>Phone / WhatsApp</strong><span>0917 123 4567</span></div></div>
+            <div class="contact-item"><div class="service-icon">◷</div><div><strong>Business Hours</strong><span>Monday – Saturday: 9:00 AM – 6:00 PM<br>Sunday: By appointment</span></div></div>
+            <p class="form-note">The contact details above are sample placeholders. Replace them with Rick's actual business information before publishing.</p>
+          </div>
+          <div class="contact-card reveal">
+            <h3>Request a Repair</h3>
+            <form class="contact-form" id="repairForm">
+              <label>Your name<input name="name" type="text" placeholder="e.g. Juan Dela Cruz" required></label>
+              <label>Contact number<input name="phone" type="tel" placeholder="Your mobile number" required></label>
+              <label>Phone model<input name="model" type="text" placeholder="e.g. Samsung Galaxy A54"></label>
+              <label>How can we help?<textarea name="message" placeholder="Briefly describe the problem..." required></textarea></label>
+              <button class="btn" type="submit">Prepare Message <span>→</span></button>
+              <p class="form-note">This form opens your email app with the details filled in. It does not send anything automatically.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="#home"><span class="brand-mark">🔧</span><span class="brand-name">Rick's <span>Cellphone Repair</span></span></a>
+          <p>Fast. Reliable. Affordable. Helping you stay connected, one repair at a time.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#why">Why Rick's</a><a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="copyright"><span>© <span id="year"></span> Rick's Cellphone Repair. All rights reserved.</span><span>Made to keep you connected.</span></div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <script>
+    // Update these details before publishing.
+    const BUSINESS_EMAIL = "YOUR-EMAIL@example.com";
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const toTop = document.getElementById("toTop");
+    window.addEventListener("scroll", () => {
+      toTop.classList.toggle("show", window.scrollY > 450);
+    }, { passive: true });
+    toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+    document.getElementById("repairForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const subject = encodeURIComponent("Repair inquiry — " + (data.get("model") || "Cellphone repair"));
+      const body = encodeURIComponent(
+        "Name: " + data.get("name") + "\n" +
+        "Contact number: " + data.get("phone") + "\n" +
+        "Phone model: " + (data.get("model") || "Not specified") + "\n\n" +
+        "Problem:\n" + data.get("message")
+      );
+      if (BUSINESS_EMAIL === "YOUR-EMAIL@example.com") {
+        alert("Please set BUSINESS_EMAIL in the JavaScript before using the repair inquiry form.");
+        return;
+      }
+      window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
